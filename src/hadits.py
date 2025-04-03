@@ -1,5 +1,5 @@
 zuhur = (
-    "Rasulullah SAW bersabda, \"Sesungguhnya pintu-pintu langit dibuka "
+    "Waktunya Sholat Zuhur! Rasulullah SAW bersabda, \"Sesungguhnya pintu-pintu langit dibuka "
     "hingga tergelincir matahari dan tidaklah tertutup hingga salat Dzuhur, "
     "maka aku ingin saat itu yang naik bagiku adalah suatu kebaikan.\" "
     "(Shahih at Targhib, 584)."

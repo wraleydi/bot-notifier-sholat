@@ -1,38 +1,28 @@
 import os
 import sys
 import pygame
-from PyQt6.QtWidgets import QApplication, QMessageBox
-from PyQt6.QtCore import Qt, QTimer
+import tkinter as tk
+from tkinter import messagebox
 
-def play_azan_and_close(msg_box):
+def play_azan():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     audio_path = os.path.join(script_dir, "azan.mp3")
 
     pygame.mixer.init()
     pygame.mixer.music.load(audio_path)
-    pygame.mixer.music.play()
-
-    audio_length = pygame.mixer.Sound(audio_path).get_length()
-
-    QTimer.singleShot(int(audio_length * 1000), msg_box.accept)
-
-    msg_box.finished.connect(lambda: pygame.mixer.music.stop())
+    pygame.mixer.music.play() 
 
 def show_alert(message, detailed_message=None):
-    app = QApplication(sys.argv)
+    root = tk.Tk()
+    root.withdraw() 
 
-    msg_box = QMessageBox()
-    msg_box.setWindowTitle("Waktu Sholat")
-    msg_box.setTextFormat(Qt.TextFormat.RichText)
-    msg_box.setText(f"<p align='center' style='font-size: 20px;'><b>{message}</b></p>")
+    play_azan()
 
     if detailed_message:
-        msg_box.setInformativeText(f"<p align='center' style='font-size: 16px;'>{detailed_message}</p>")
+        messagebox.showinfo("Waktu Sholat", f"{message}\n\n{detailed_message}")
+    else:
+        messagebox.showinfo("Waktu Sholat", message)
 
-    msg_box.setStyleSheet("QLabel{ font-size: 18px; }")
-    msg_box.setIcon(QMessageBox.Icon.NoIcon)
-    msg_box.setStandardButtons(QMessageBox.StandardButton.Close)
+    pygame.mixer.music.stop()
+    root.destroy()
 
-    play_azan_and_close(msg_box)
-
-    msg_box.exec()

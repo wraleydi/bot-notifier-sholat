@@ -6,25 +6,20 @@ from hadits import zuhur, ashar, magrib, isya, subuh
 def main():
     current_time = datetime.now()
 
-    if current_time.hour == 12 and current_time.minute == 5:
-        formatted_message = f"<p align='center' style='font-size: 16px;'>{zuhur}</p>"
-        show_alert("Waktunya Sholat Zuhur!", formatted_message)
+    if current_time.hour == 23 and current_time.minute == 7:
+        show_alert("Waktunya Sholat Zuhur!")
 
     elif current_time.hour == 15 and current_time.minute == 5:
-        formatted_message = f"<p align='center' style='font-size: 16px;'>{ashar}</p>"
-        show_alert("Waktunya Sholat Ashar!", formatted_message)
+        show_alert("Waktunya Sholat Ashar!")
 
     elif current_time.hour == 18 and current_time.minute == 0:
-        formatted_message = f"<p align='center' style='font-size: 16px;'>{magrib}</p>"
-        show_alert("Waktunya Sholat Maghrib!", formatted_message)
+        show_alert("Waktunya Sholat Maghrib!")
 
     elif current_time.hour == 19 and current_time.minute == 5:
-        formatted_message = f"<p align='center' style='font-size: 16px;'>{isya}</p>"
-        show_alert("Waktunya Sholat Isya!", formatted_message)
+        show_alert("Waktunya Sholat Isya!")
 
     elif current_time.hour == 4 and current_time.minute == 5:
-        formatted_message = f"<p align='center' style='font-size: 16px;'>{subuh}</p>"
-        show_alert("Waktunya Sholat Subuh!", formatted_message)
+        show_alert("Waktunya Sholat Subuh!")
 
     time.sleep(60 - current_time.second)
 
