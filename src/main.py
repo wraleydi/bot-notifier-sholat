@@ -5,7 +5,7 @@ from notifier import show_alert
 def main():
     current_time = datetime.now()
 
-    if current_time.hour == 0 and current_time.minute == 34:
+    if current_time.hour == 22 and current_time.minute == 42:
         show_alert("Waktunya Sholat Zuhur!")
 
     elif current_time.hour == 15 and current_time.minute == 5:
